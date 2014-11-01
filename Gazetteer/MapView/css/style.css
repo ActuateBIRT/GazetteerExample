@@ -1,0 +1,120 @@
+@import url(http://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
+body {
+    margin:0 auto;
+}
+#mapTitle {
+    font-family: Verdana;
+    font-weight: 600;
+    font-size: 40px;
+    position: absolute;
+    top: 15px;
+    left: 300px;
+    height: auto;
+    width: auto;
+    overflow: auto;
+    z-index: 120;
+    text-align: center;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
+
+    #container {
+        float:left;
+        width   : 1024px;
+        height  : 704px;
+        position:relative;
+    }
+
+    #mapdiv {
+        float : left;
+        width   : 768px;
+        height  : 704px;
+        position: relative;
+        background: #EFEFF4;
+    }
+
+    #backButton {
+        font-family: Verdana;
+        font-size: 15px;
+        position: absolute;
+        background: #D5D5E1;
+        bottom: 5px; 
+        right: 260px; 
+        height: 46px;
+        width: 234px;
+        overflow: auto;
+        z-index: 100;
+    }
+
+    #sidebar {
+        float:right;
+        width   : 256px;
+        height  : 704px;
+        position:relative;
+        background: #14212F;
+    }
+
+    #sidebar-1{
+        clear:left;
+        float:left;
+        width   : 256px;
+        height  : 528px;
+    }    
+    #sidebar-2 {
+        clear:none;
+        float:right;
+        width   : 256px;
+        height  : 176px;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    #container {
+        width   : 768px;
+        height  : 960px;
+    }
+
+    #mapdiv {
+        float:left;
+        position:relative;
+        background: #EFEFF4;
+        width   : 768px;
+        height  : 768px;
+    }
+
+    #sidebar {
+        clear:left;
+        float:left;
+        float: right;
+        width   : 768px;
+        height  : 192px;
+        background: #14212F;
+    }
+
+    #sidebar-1 {
+        clear:none;
+        float:left;
+        position:relative;
+        width   : 576px;
+        height  : 192px; 
+    }
+
+    #sidebar-2 {
+        clear:none;
+        float:right;
+        position:relative;
+        width   : 192px;
+        height  : 192px;
+    }
+    #backButton {
+        font-family: Verdana;
+        font-size: 15px;
+        position: absolute; 
+        bottom: 200px;
+        background: #D5D5E1;
+        right: 5px;
+        height: 35px;
+        width: 200px;
+        overflow: auto;
+        z-index: 100;
+    }
+}

@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ons-Df-6Ry">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pY4-Hu-kfo">
+            <objects>
+                <navigationController id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translucent="NO" shadowImage="globe_portrait.png" backIndicatorImage="globe_portrait.png" backIndicatorTransitionMaskImage="globe_portrait.png" id="Pmd-2v-anx">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1202" y="-1975"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="yUG-lL-AsK">
+            <objects>
+                <viewController title="Detail" id="JEX-9P-axG" customClass="BIRTDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
+                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rbx-ii-jLn" userLabel="Button_SeeMore">
+                                <rect key="frame" x="607" y="28" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2nv-AF-Bvd" kind="modal" identifier="showReport" id="zl3-HZ-4rs"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="Hby-qX-ENH" userLabel="ScrollView">
+                                <rect key="frame" x="125" y="125" width="450" height="530"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <containerView tag="1" contentMode="scaleToFill" id="eyT-5k-ckM" userLabel="PieChart">
+                                        <rect key="frame" x="25" y="25" width="400" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <connections>
+                                            <segue destination="NVN-C6-Mzt" kind="embed" identifier="pieChart" id="56M-Yd-iBJ"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView tag="2" contentMode="scaleToFill" id="i0c-d8-G6M" userLabel="ColumnChart">
+                                        <rect key="frame" x="475" y="25" width="400" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="R3X-sG-kDj" kind="embed" identifier="columnChart" id="JEe-Wx-h3n"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="Zil-9t-AZW" userLabel="BarChart">
+                                        <rect key="frame" x="925" y="25" width="400" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="X7D-50-JBa" kind="embed" identifier="barChart" id="hbR-W8-RcT"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="tl4-u4-210"/>
+                                </connections>
+                            </scrollView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aLr-wZ-5wE">
+                                <rect key="frame" x="20" y="0.0" width="504" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" red="0.76862752437591553" green="0.78431379795074463" blue="0.81568634510040283" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="2Us-eb-5pq" customClass="BIRTPagerView">
+                                <rect key="frame" x="220" y="642" width="260" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" image="menu.png" id="qzx-bL-ZuI" userLabel="Menu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showMenu:" destination="JEX-9P-axG" id="aIi-KE-RPq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="pagerView" destination="2Us-eb-5pq" id="uqh-eK-TcD"/>
+                        <outlet property="scrollView" destination="Hby-qX-ENH" id="wKA-Ok-bfn"/>
+                        <outlet property="seeMore" destination="Rbx-ii-jLn" id="Y72-Vt-dVX"/>
+                        <outlet property="titleLabel" destination="aLr-wZ-5wE" id="9Uw-fa-j4w"/>
+                        <segue destination="Dsg-Hh-D32" kind="modal" identifier="information" id="MK1-xV-Ng3"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="701-Jz-VX3"/>
+                        <segue destination="xP8-8A-lSD" kind="modal" identifier="source" id="KK0-3d-xbj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="664"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="5Hl-Rg-5Hf">
+            <objects>
+                <viewController storyboardIdentifier="loginController" providesPresentationContextTransitionStyle="YES" id="Bzw-YK-56a" customClass="BIRTLoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lkl-Da-gup">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_landscape.png" id="xU9-go-cx2">
+                                <rect key="frame" x="-5" y="-40" width="1024" height="1064"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.082352943720000002" green="0.1294117719" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="23" clearButtonMode="whileEditing" id="W5Z-pi-fyl">
+                                <rect key="frame" x="189" y="367" width="390" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="23" clearButtonMode="whileEditing" id="y8O-Du-eWG">
+                                <rect key="frame" x="189" y="427" width="390" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="dVr-Ro-NG5">
+                                <rect key="frame" x="189" y="487" width="390" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.39215689897537231" green="0.65882354974746704" blue="0.9803922176361084" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="LOG IN ">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enter:" destination="Bzw-YK-56a" eventType="touchDown" id="B82-2j-uhD"/>
+                                    <action selector="enter:" destination="Dr2-Cb-NNe" eventType="touchUpInside" id="CC8-B2-Kjl"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" id="utD-wh-7Z2">
+                                <rect key="frame" x="480" y="502" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIRT Gazetteer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JOy-bk-Yjy">
+                                <rect key="frame" x="189" y="307" width="390" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="57"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.74814666970802923" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_smaller.png" id="3ya-lb-atq">
+                                <rect key="frame" x="338" y="207" width="92" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving data..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NzK-OV-1vg">
+                                <rect key="frame" x="278" y="497" width="200" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pu8-xe-Yo9">
+                                <rect key="frame" x="714" y="969" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <state key="normal" image="cog.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showUserDataEntryForm:" destination="Bzw-YK-56a" eventType="touchDown" id="iQL-ui-Xvf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7kV-FX-9T9" propertyAccessControl="none"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="activitySpinner" destination="utD-wh-7Z2" id="Ii1-An-5h7"/>
+                        <outlet property="appLogo" destination="3ya-lb-atq" id="oF8-3o-dHb"/>
+                        <outlet property="appTitle" destination="JOy-bk-Yjy" id="lat-Rz-wMO"/>
+                        <outlet property="indicatorView" destination="utD-wh-7Z2" id="VxI-P2-2n7"/>
+                        <outlet property="loadingTitle" destination="NzK-OV-1vg" id="DWX-Ve-UvV"/>
+                        <outlet property="loginButton" destination="dVr-Ro-NG5" id="WhZ-4u-HGO"/>
+                        <outlet property="password" destination="y8O-Du-eWG" id="fdR-Z8-fYi"/>
+                        <outlet property="popoverIcon" destination="Pu8-xe-Yo9" id="cmi-ut-qAk"/>
+                        <outlet property="username" destination="W5Z-pi-fyl" id="P7W-lb-BYr"/>
+                        <segue destination="H1p-Uh-vWS" kind="push" identifier="loginSucess" id="2lS-Ug-KqZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dr2-Cb-NNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3763" y="-912"/>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="FZR-FJ-kYT">
+            <objects>
+                <viewController storyboardIdentifier="popupView" id="8fT-3b-FsF" customClass="BIRTPopupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GPT-fH-UQo">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="169"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="REST API URL" minimumFontSize="17" id="Nuu-bG-lG8">
+                                <rect key="frame" x="167" y="33" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iHub Server URL" minimumFontSize="17" id="xb0-0w-hs6">
+                                <rect key="frame" x="167" y="85" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lIs-Uz-deP">
+                                <rect key="frame" x="238" y="129" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="8fT-3b-FsF" eventType="touchUpInside" id="zbC-Ys-FJt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iHub Server URL :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mfl-RY-YTQ">
+                                <rect key="frame" x="20" y="89" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REST API URL :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fKa-GS-47X">
+                                <rect key="frame" x="20" y="37" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="200"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="500" height="169"/>
+                    <connections>
+                        <outlet property="restApiUrl" destination="Nuu-bG-lG8" id="sIN-NB-Bmg"/>
+                        <outlet property="serverUrl" destination="xb0-0w-hs6" id="xO8-l6-4CO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66L-wQ-WBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3733" y="477"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Nki-YV-4Qg">
+            <objects>
+                <splitViewController extendedLayoutIncludesOpaqueBars="YES" id="H1p-Uh-vWS" customClass="BIRTSplitViewController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Isv-o0-Fe2"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
+                        <segue destination="G1v-EE-3NE" kind="relationship" relationship="detailViewController" id="3aB-8K-f5J"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2575" y="-784"/>
+        </scene>
+        <!--Master View Controller-->
+        <scene sceneID="smW-Zh-WAh">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="BIRTMasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.078431375324726105" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" red="0.078431375324726105" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.078431375324726105" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.078431375324726105" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" red="0.078431375324726105" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="7bK-jq-Zjz" id="Ljl-kZ-DB6"/>
+                            <outlet property="delegate" destination="7bK-jq-Zjz" id="vql-oC-Pem"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Zdf-7t-Un8">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="tableView" destination="r7i-6Z-zg0" id="4rn-Ur-ofo"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="H8E-ZF-nHQ"/>
+                        <segue destination="Fll-0b-Hsm" kind="modal" identifier="mapView" modalTransitionStyle="flipHorizontal" animates="NO" id="nfp-Tk-EsH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343" y="-1982"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hJA-Z7-BM0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2nv-AF-Bvd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mZU-UW-ZCm">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gYf-SH-tuC" kind="relationship" relationship="rootViewController" id="UEI-ul-bSt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89y-pt-BOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-664"/>
+        </scene>
+        <!--ReportView-->
+        <scene sceneID="jQq-uy-Tty">
+            <objects>
+                <viewController title="ReportView" id="gYf-SH-tuC" customClass="BIRTWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HUz-aa-7d5">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="SwF-Il-rZ0" customClass="BIRTWebView">
+                                <rect key="frame" x="0.0" y="-35" width="1024" height="750"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="nDI-wA-UoL">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="V4U-p1-zQq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Cdk-Z2-I7W" kind="unwind" identifier="goBack" unwindAction="unwindToView:" id="WKV-fR-rul"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="menu.png" id="pVt-3i-PXe">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showMenu:" destination="gYf-SH-tuC" id="Q2f-9P-Zsm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="SwF-Il-rZ0" id="krg-OW-lbX"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="KRd-5e-emb"/>
+                        <segue destination="Dsg-Hh-D32" kind="modal" identifier="information" id="8TY-xj-tyG"/>
+                        <segue destination="xP8-8A-lSD" kind="modal" identifier="source" id="eBe-CF-3j2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8PH-0F-Lrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Cdk-Z2-I7W" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="-664"/>
+        </scene>
+        <!--Mobile Gazetteer-->
+        <scene sceneID="gS3-d5-ggH">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Dsg-Hh-D32" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Mobile Gazetteer" id="4aF-Rh-Z9H"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yFs-Xn-SWt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="tintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FSX-ct-nMU" kind="relationship" relationship="rootViewController" id="sUP-Y3-dKJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKI-0N-SFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3661" y="-656"/>
+        </scene>
+        <!--BIRT Gazetteer-->
+        <scene sceneID="Az3-Ly-v3l">
+            <objects>
+                <viewController id="fEC-H4-oGP" customClass="BIRTExtUrlViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KPO-2s-wgq">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="dej-Rz-IUm">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="ihJ-Ho-aGJ">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="m0d-3Q-BaO" userLabel="Bar Button Item - Item">
+                            <color key="tintColor" red="0.97397462970000004" green="0.97239422249999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="closeView:" destination="fEC-H4-oGP" id="2lw-G2-HMQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="dej-Rz-IUm" id="09G-Fn-2wF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tk7-tA-XV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7594" y="-656"/>
+        </scene>
+        <!--Mobile Gazetteer-->
+        <scene sceneID="vP8-nI-KFA">
+            <objects>
+                <viewController title="Mobile Gazetteer" id="FSX-ct-nMU" customClass="BIRTAboutUsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2sF-Jr-poL">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About the App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dIB-zh-Jv8">
+                                <rect key="frame" x="33" y="20" width="542" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                <color key="textColor" red="0.77254909279999995" green="0.78823536630000002" blue="0.81960791349999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_landscape.png" id="6sQ-Mt-VRC">
+                                <rect key="frame" x="745" y="34" width="279" height="418"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_portrait.png" id="4Zd-ea-S4k">
+                                <rect key="frame" x="560" y="425" width="418" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="lhb-ui-opL">
+                                <rect key="frame" x="20" y="161" width="704" height="706"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This is a simple example application that illustrates how developers can craft sophisticated mobile applications that integrate the power of BIRT and BIRT iHub from Actuate. 
+
+BIRT transforms complex data seamlessly and effectively into compelling visualizations: reports, statements, graphs, charts, tables, diagrams, and more. With BIRT iHub developers can quickly add embedded analytics and business intelligence capabilities to applications using REST and JavaScript APIs.
+
+The BIRT iHub REST API provides easy access to all the functionality of the BIRT iHub platform including creating, securing and accessing content. The JSAPI allows developers to directly and seamlessly display visualizations from the BIRT iHub platform within their mobile applications.
+
+BIRT enables developers to incorporate rich analytics and business intelligence features without all the coding that would otherwise be necessary to build those visualizations in the mobile app itself.
+
+The code for this application is provided as an xCode project on GitHub(</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="https://github.com/ActuateBIRT/GazetteerExample">
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <string key="NSLink">https://github.com/ActuateBIRT/GazetteerExample</string>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">) along with explanatory material and documentation.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90588241815567017" green="0.90588241815567017" blue="0.92549026012420654" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="qgP-LH-oZf">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="XIe-la-FlX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeView:" destination="FSX-ct-nMU" id="3WJ-gI-kAr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="dIB-zh-Jv8" id="m6i-Qv-uZ4"/>
+                        <outlet property="landscapeGlobe" destination="6sQ-Mt-VRC" id="axI-rb-nT2"/>
+                        <outlet property="portraitGlobe" destination="4Zd-ea-S4k" id="XaQ-3u-Xxj"/>
+                        <segue destination="m0y-MF-i1O" kind="modal" identifier="externalUrl" id="SvP-am-f7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sk-QZ-Qc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5016" y="-656"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pPf-CT-tJM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ons-Df-6Ry" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="y71-rj-Y2g"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="Hpa-l8-HNU">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bzw-YK-56a" kind="relationship" relationship="rootViewController" id="Hgt-T1-pLw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQh-JT-X9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5131" y="-776"/>
+        </scene>
+        <!--Mobile Gazetteer-->
+        <scene sceneID="pfv-zt-kxC">
+            <objects>
+                <navigationController title="Mobile Gazetteer" id="G1v-EE-3NE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translucent="NO" id="wbw-wz-Bek">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="tintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="jhp-Dp-VrT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNI-Ya-tkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1258" y="664"/>
+        </scene>
+        <!--Column Chart View Controller-->
+        <scene sceneID="Zd9-hL-iEa">
+            <objects>
+                <viewController storyboardIdentifier="columnchart" automaticallyAdjustsScrollViewInsets="NO" id="R3X-sG-kDj" customClass="BIRTColumnChartViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Cr-54-AbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GDP Per Capita Comparison" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FFU-us-08g">
+                                <rect key="frame" x="112" y="20" width="193" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" red="0.02091109117" green="0.072107031969999999" blue="0.32633131380000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="lnb-GF-dGC">
+                                <rect key="frame" x="74" y="190" width="299" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="0j8-RJ-ECF" customClass="BIRTUISlider">
+                                <rect key="frame" x="74" y="430" width="252" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" red="0.02091109117" green="0.072107031969999999" blue="0.32633131380000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="R3X-sG-kDj" eventType="touchDragOutside" id="0AX-4a-Yra"/>
+                                    <action selector="sliderChanged:" destination="R3X-sG-kDj" eventType="touchDragInside" id="27j-Q6-8Q4"/>
+                                    <action selector="sliderChanged:" destination="R3X-sG-kDj" eventType="touchUpInside" id="bpf-XW-6FL"/>
+                                    <action selector="sliderChanged:" destination="R3X-sG-kDj" eventType="touchDown" id="clL-Hg-omY"/>
+                                    <action selector="sliderChanged:" destination="R3X-sG-kDj" eventType="valueChanged" id="opJ-NE-rvN"/>
+                                    <action selector="sliderChanged:" destination="R3X-sG-kDj" eventType="touchUpOutside" id="xID-nd-Hui"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bTi-Y0-TmI">
+                                <rect key="frame" x="177" y="390" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.02091109117" green="0.072107031969999999" blue="0.32633131380000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="noData" destination="lnb-GF-dGC" id="apV-4z-d55"/>
+                        <outlet property="timeLine" destination="0j8-RJ-ECF" id="9qS-nm-350"/>
+                        <outlet property="timeLineLabel" destination="bTi-Y0-TmI" id="SQf-Mg-ztv"/>
+                        <outlet property="titleLabel" destination="FFU-us-08g" id="S61-gY-OCX"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="Eu9-d7-a3Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yH-Hn-nEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="1740"/>
+        </scene>
+        <!--Pie Chart View Controller-->
+        <scene sceneID="OsN-hp-gVY">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="NVN-C6-Mzt" customClass="BIRTPieChartViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="VNU-cU-Ota" userLabel="MainView" customClass="BIRTPieChartView">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="zRS-Ue-Exa" userLabel="TimeSlider" customClass="BIRTUISlider">
+                                <rect key="frame" x="71" y="430" width="252" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="NVN-C6-Mzt" eventType="touchUpOutside" id="3jm-mE-v6B"/>
+                                    <action selector="sliderChanged:" destination="NVN-C6-Mzt" eventType="touchDragInside" id="JvQ-2e-y6k"/>
+                                    <action selector="sliderChanged:" destination="NVN-C6-Mzt" eventType="touchDown" id="cVV-YI-Mjl"/>
+                                    <action selector="sliderChanged:" destination="NVN-C6-Mzt" eventType="touchUpInside" id="fHm-BR-EQM"/>
+                                    <action selector="sliderChanged:" destination="NVN-C6-Mzt" eventType="touchDragOutside" id="rcS-XP-af8"/>
+                                    <action selector="sliderChanged:" destination="NVN-C6-Mzt" eventType="valueChanged" id="zUE-td-hPx"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="XRv-wE-yBO">
+                                <rect key="frame" x="50" y="230" width="299" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age Distribution" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pzT-WJ-Pih">
+                                <rect key="frame" x="139" y="20" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="0.02091109117" green="0.072107031969999999" blue="0.32633131380000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zzq-M5-dwj">
+                                <rect key="frame" x="175" y="390" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.02091109117" green="0.072107031969999999" blue="0.32633131380000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="noData" destination="XRv-wE-yBO" id="rJP-r6-svv"/>
+                        <outlet property="pieView" destination="VNU-cU-Ota" id="QQJ-He-eUO"/>
+                        <outlet property="timeLine" destination="zRS-Ue-Exa" id="Fj3-Nr-p6t"/>
+                        <outlet property="timeLineLabel" destination="Zzq-M5-dwj" id="cda-G7-QDT"/>
+                        <outlet property="titleLabel" destination="pzT-WJ-Pih" id="Fvf-g9-r9Z"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="kHj-mT-ZYl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yq4-Xa-vzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="1740"/>
+        </scene>
+        <!--Bar Chart View Controller-->
+        <scene sceneID="5wZ-Z5-0Nx">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="X7D-50-JBa" customClass="BIRTBarChartViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vLJ-Z7-c0a">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="L1w-FA-aEE" customClass="BIRTBarChartWebView">
+                                <rect key="frame" x="0.0" y="-14" width="400" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="BarChartWebView" destination="L1w-FA-aEE" id="PGp-kc-k9V"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="Bie-Nh-zI2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2U-nb-nUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="1740"/>
+        </scene>
+        <!--BIRT Gazetteer-->
+        <scene sceneID="nwl-bD-urf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m0y-MF-i1O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="ZW7-uS-8BW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8qh-MN-gPY">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fEC-H4-oGP" kind="relationship" relationship="rootViewController" id="pkS-e9-Gkh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXD-0l-tcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6300" y="-664"/>
+        </scene>
+        <!--BIRT Gazetteer-->
+        <scene sceneID="HGa-vK-tnt">
+            <objects>
+                <viewController id="2Hj-8f-DBl" customClass="BIRTMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qgJ-Wz-uju">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="zsJ-K5-abw">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="uod-bs-7Vn">
+                        <barButtonItem key="rightBarButtonItem" image="menu.png" id="s5E-9c-nPH">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showMenu:" destination="2Hj-8f-DBl" id="dVa-s4-d7F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="zsJ-K5-abw" id="dEF-Io-Pml"/>
+                        <segue destination="Dsg-Hh-D32" kind="modal" identifier="information" id="3d9-k2-iFY"/>
+                        <segue destination="xP8-8A-lSD" kind="modal" identifier="source" id="zEE-PX-UoB"/>
+                        <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="TCw-9b-zzb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9K-rg-lKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7594" y="520"/>
+        </scene>
+        <!--BIRT Gazetteer-->
+        <scene sceneID="9em-lR-TZF">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="xP8-8A-lSD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="Wia-8W-GHJ"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="cAs-su-5xu">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12156863510608673" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ndv-yG-tue" kind="relationship" relationship="rootViewController" id="YDK-ex-PMA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PlH-97-bom" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3653" y="504"/>
+        </scene>
+        <!--BIRT Gazetteer-->
+        <scene sceneID="ZRq-Kh-pb0">
+            <objects>
+                <viewController title="BIRT Gazetteer" id="ndv-yG-tue" customClass="BIRTSourceDataViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C35-rJ-2gc">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2r2-XM-tcG">
+                                <rect key="frame" x="57" y="-15" width="542" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                <color key="textColor" red="0.77254909279999995" green="0.78823536630000002" blue="0.81960791349999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="GSp-E1-q0c">
+                                <rect key="frame" x="57" y="103" width="672" height="706"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The BIRT Gazetteer makes use of the following World Bank datasets:
+
+• GDP (current US$): World Bank national accounts data, and OECD National Accounts data files.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• GDP per capita (current US$): World Bank national accounts data, and OECD National Accounts data files.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="10"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+• Land area (sq. km): Food and Agriculture Organization,electronic files and web site.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• Life expectancy at birth, total (years): Derived from male and female life expectancy at birth from sources such as: (1) United Nations Population Division. World Population Prospects, (2) United Nations Statistical Division. Population and Vital Statistics Report (various years), (3) Census reports and other statistical publications from national statistical offices, (4) Eurostat: Demographic Statistics, (5) Secretariat of the Pacific Community: Statistics and Demography Programme, and (6) U.S. Census Bureau: International Database.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="10"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• Population (Total): (1) United Nations Population Division. World Population Prospects, (2) United Nations Statistical Division. Population and Vital Statistics Report  (various years), (3) Census reports and other statistical publications from national statistical offices, (4) Eurostat: Demographic Statistics, (5) Secretariat of the Pacific Community: Statistics and Demography Programme, and (6) U.S. Census Bureau: International Database.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="9"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• Population ages 0-14 (% of total): The United Nations Population Division's World Population Prospects.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="10"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• Population ages 15-64 (% of total): The United Nations Population Division's World Population Prospects.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="10"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• Population ages 65 and above (% of total): The United Nations Population Division's World Population Prospects.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="10"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+The World Bank authorizes the use of this material subject to the terms and conditions on its website, </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="http://www.worldbank.org/terms.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+The World Bank Datasets are being provided under the terms located at: </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="http://www.worldbank.org/terms-of-use-datasets">
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica-Bold"/>
+                                            <font key="NSOriginalFont" size="13" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+CgoKCgoKA
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_landscape.png" id="J07-pU-SaM">
+                                <rect key="frame" x="745" y="143" width="279" height="418"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_portrait.png" id="n7s-ib-YVE">
+                                <rect key="frame" x="586" y="425" width="418" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549026010000002" green="0.92549026010000002" blue="0.94117653369999998" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BIRT Gazetteer" id="Ki9-5v-Txz">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="zBI-qg-EpI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeView:" destination="ndv-yG-tue" id="JYP-ei-Agx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="2r2-XM-tcG" id="Som-9t-Uu2"/>
+                        <outlet property="landScapeImage" destination="J07-pU-SaM" id="DeE-1j-0L2"/>
+                        <outlet property="portraitImage" destination="n7s-ib-YVE" id="vNb-IQ-FG7"/>
+                        <outlet property="textView" destination="GSp-E1-q0c" id="BWe-bK-WHg"/>
+                        <segue destination="m0y-MF-i1O" kind="modal" identifier="externalUrl" id="h1P-ug-53A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T92-f3-6WZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5046" y="536"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qWQ-3R-6Gz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fll-0b-Hsm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Qtd-8B-SSl">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.08235294371843338" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.12549020349979401" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Hj-8f-DBl" kind="relationship" relationship="rootViewController" id="qPv-Ct-e2i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPT-ZK-lZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6300" y="520"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cog.png" width="36" height="36"/>
+        <image name="globe_landscape.png" width="562" height="837"/>
+        <image name="globe_portrait.png" width="837" height="558"/>
+        <image name="logo_smaller.png" width="92" height="92"/>
+        <image name="map_landscape.png" width="2048" height="1403"/>
+        <image name="menu.png" width="21" height="17"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="701-Jz-VX3"/>
+        <segue reference="KK0-3d-xbj"/>
+        <segue reference="MK1-xV-Ng3"/>
+        <segue reference="SvP-am-f7J"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.082352943720000002" green="0.1294117719" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
+</document>

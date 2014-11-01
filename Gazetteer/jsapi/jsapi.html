@@ -1,0 +1,96 @@
+
+<script type='text/javascript' language='JavaScript' src='jsapiUrl'></script>
+<script>
+    var report ;
+    var baseURL;
+    var parameters;
+    var data ;
+    var userName = {uName};
+    var password = {pwd};
+    
+    function init(inputData) {
+        
+        data = inputData;
+        report = data.report;
+        baseURL = data.iportalUrl;
+        var reqOps = new actuate.RequestOptions( );
+        reqOps.setVolumeProfile( "default volume" );
+        reqOps.setVolume( "default volume" );
+        actuate.load("viewer");
+        actuate.initialize(
+                       baseURL,
+                       reqOps,
+                       userName,
+                       password,
+                       function()
+                       {
+                       
+                       initViewer();
+                       
+                       }
+                       
+                       );
+    }
+
+    function initViewer( )
+    {
+        try
+        {
+            var viewer = new actuate.Viewer( "container");
+            viewer.setReportDesign( report );
+            viewer.setWidth(data.width);
+            viewer.setHeight(data.height);
+            var options = new actuate.viewer.UIOptions( );
+            options.enableToolBar(false);
+            var parameterValues=[];
+            
+            if(data.continent != null) {
+                var param=new actuate.viewer.impl.ParameterValue();
+                param.setName("continent");
+                param.setValue(data.continent);
+                parameterValues.push(param);
+            }
+            
+            if (data.region != null) {
+                var param=new actuate.viewer.impl.ParameterValue();
+                param.setName("region");
+                param.setValue(data.region);
+                parameterValues.push(param);
+            }
+            
+            if (data.country != null) {
+                var param=new actuate.viewer.impl.ParameterValue();
+                param.setName("country");
+                param.setValue(data.country);
+                parameterValues.push(param);
+            }
+            
+            
+            if (parameterValues.length > 0 ) {
+                viewer.setParameterValues(parameterValues);
+            }
+            
+            if (data.bookmark != null) {
+                viewer.setReportletBookmark(data.bookmark);
+            }
+            
+            viewer.setUIOptions( options );
+            viewer.submit();
+        
+        
+    }
+    catch( e )
+    {
+        alert( e.getErrorMessage( ) );
+    }
+}
+	
+</script>
+
+<body onload="">
+
+<div id ="container">
+    
+</div>
+
+</body>
