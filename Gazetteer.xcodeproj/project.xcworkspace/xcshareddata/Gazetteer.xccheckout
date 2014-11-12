@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1116644E-7DE0-4355-A775-A043206E2063</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Gazetteer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F3371667BA21DF163F86AA6B61BF2F5D2A102383</key>
+		<string>github.com:ActuateBIRT/GazetteerExample.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Gazetteer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F3371667BA21DF163F86AA6B61BF2F5D2A102383</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ActuateBIRT/GazetteerExample.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F3371667BA21DF163F86AA6B61BF2F5D2A102383</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F3371667BA21DF163F86AA6B61BF2F5D2A102383</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GazetteerApp_GitHUb</string>
+		</dict>
+	</array>
+</dict>
+</plist>

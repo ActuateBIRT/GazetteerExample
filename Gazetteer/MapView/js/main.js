@@ -1,16 +1,16 @@
-/*=============================================
- = DataSet Providing navigation data hierarchy =
- =============================================*/
+var worldDataProvider , north_americaDataProvider, europeDataProvider, asiaDataProvider, africaDataProvider, south_americaDataProvider, australiaDataProvider, continentsDataProvider;
 
-var worldDataProvider = {
+/*=============================================
+= DataSet Providing navigation data hierarchy =
+=============================================*/
+
+worldDataProvider = {
 map: "worldLow",
 getAreasFromMap: true
 };
 
-/*==========  Contry Level  ==========*/
-
 /*==========  Continent  ==========*/
-var north_americaDataProvider = {
+north_americaDataProvider = {
 map: "northAmericaLow",
 areas: [{
         id : "BS",
@@ -19,7 +19,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -29,7 +29,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -39,7 +39,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -49,7 +49,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -59,7 +59,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -69,7 +69,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -79,7 +79,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -89,7 +89,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -99,7 +99,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -109,7 +109,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -119,7 +119,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -129,7 +129,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -139,7 +139,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -149,7 +149,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -159,7 +159,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -169,7 +169,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -179,7 +179,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -189,12 +189,52 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
-        }]
+        },{
+        id: "africa",
+        linkToObjectCustom: "africaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "asia",
+        linkToObjectCustom: "asiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        },{
+        id: "europe",
+        linkToObjectCustom: "europeDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "australia",
+        linkToObjectCustom: "australiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "south_america",
+        linkToObjectCustom: "south_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+    }]
 };
-var europeDataProvider = {
+europeDataProvider = {
 map: "europeLow",
 areas: [{
         id : "AL",
@@ -203,7 +243,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -213,7 +253,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -223,7 +263,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -233,7 +273,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -243,7 +283,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -253,7 +293,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -263,7 +303,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -273,7 +313,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -283,7 +323,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -293,7 +333,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -303,7 +343,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -313,7 +353,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -323,7 +363,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -333,7 +373,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -343,7 +383,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -353,7 +393,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -363,7 +403,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -373,7 +413,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -383,7 +423,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -393,7 +433,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -403,7 +443,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -413,7 +453,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -423,7 +463,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -433,7 +473,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -443,7 +483,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -453,7 +493,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -463,7 +503,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -473,7 +513,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -483,7 +523,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -493,7 +533,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -503,7 +543,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -513,7 +553,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -523,7 +563,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -533,7 +573,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -543,7 +583,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -553,7 +593,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -563,7 +603,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -573,7 +613,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -583,7 +623,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -593,7 +633,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -603,7 +643,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -613,7 +653,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -623,7 +663,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -633,7 +673,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -643,12 +683,52 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
-        }]
+        },{
+        id: "africa",
+        linkToObjectCustom: "africaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "asia",
+        linkToObjectCustom: "asiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        },{
+        id: "australia",
+        linkToObjectCustom: "australiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "north_america",
+        linkToObjectCustom: "north_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "south_america",
+        linkToObjectCustom: "south_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+    }]
 };
-var asiaDataProvider = {
+asiaDataProvider = {
 map: "asiaLow",
 areas: [{
         id : "KH",
@@ -657,7 +737,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         },{
@@ -667,7 +747,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -677,7 +757,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -687,7 +767,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -697,7 +777,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -707,7 +787,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -717,7 +797,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -727,7 +807,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -737,7 +817,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -747,7 +827,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -757,7 +837,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -767,7 +847,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -777,7 +857,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -787,7 +867,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -797,7 +877,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -807,7 +887,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -817,7 +897,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -827,7 +907,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -837,7 +917,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -847,7 +927,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -857,7 +937,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -867,7 +947,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -877,7 +957,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -887,7 +967,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -897,7 +977,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -907,7 +987,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -917,7 +997,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -927,7 +1007,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -937,7 +1017,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -947,7 +1027,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -957,7 +1037,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -967,7 +1047,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -977,7 +1057,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -987,7 +1067,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -997,7 +1077,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1007,7 +1087,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1017,7 +1097,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1027,7 +1107,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1037,7 +1117,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1047,7 +1127,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1057,7 +1137,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1067,7 +1147,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1077,7 +1157,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1087,12 +1167,52 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
-        }]
+        },{
+        id: "africa",
+        linkToObjectCustom: "africaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "australia",
+        linkToObjectCustom: "australiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        },{
+        id: "europe",
+        linkToObjectCustom: "europeDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "north_america",
+        linkToObjectCustom: "north_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "south_america",
+        linkToObjectCustom: "south_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+    }]
 };
-var africaDataProvider = {
+africaDataProvider = {
 map: "africaLow",
 areas: [{
         id : "DZ",
@@ -1101,7 +1221,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1111,7 +1231,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1121,7 +1241,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1131,7 +1251,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1141,7 +1261,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1151,7 +1271,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1161,7 +1281,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1171,7 +1291,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1181,7 +1301,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1191,7 +1311,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1201,7 +1321,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1211,7 +1331,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1221,7 +1341,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1231,7 +1351,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1241,7 +1361,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1251,7 +1371,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1261,7 +1381,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1271,7 +1391,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1281,7 +1401,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1291,7 +1411,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1301,7 +1421,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1311,7 +1431,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1321,7 +1441,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1331,7 +1451,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1341,7 +1461,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1351,7 +1471,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1361,7 +1481,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1371,7 +1491,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1381,7 +1501,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1391,7 +1511,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1401,7 +1521,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1411,7 +1531,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1421,7 +1541,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1431,7 +1551,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1441,7 +1561,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1451,7 +1571,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1461,7 +1581,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1471,7 +1591,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1481,7 +1601,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1491,7 +1611,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1501,7 +1621,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1511,7 +1631,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1521,7 +1641,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1531,7 +1651,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1541,7 +1661,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1551,7 +1671,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1561,7 +1681,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1571,7 +1691,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         },{
@@ -1581,7 +1701,7 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         },{
@@ -1591,12 +1711,52 @@ areas: [{
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
-        }]
+        },{
+        id: "australia",
+        linkToObjectCustom: "australiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "asia",
+        linkToObjectCustom: "asiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        },{
+        id: "europe",
+        linkToObjectCustom: "europeDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "north_america",
+        linkToObjectCustom: "north_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "south_america",
+        linkToObjectCustom: "south_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+    }]
 };
-var south_americaDataProvider = {
+south_americaDataProvider = {
 map: "southAmericaLow",
 areas: [    {
         id : "AR",
@@ -1605,7 +1765,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1615,7 +1775,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1625,7 +1785,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1635,7 +1795,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1645,7 +1805,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1655,7 +1815,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1665,7 +1825,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1675,7 +1835,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1685,7 +1845,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1695,7 +1855,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1705,7 +1865,7 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1715,21 +1875,61 @@ areas: [    {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
-        }]
+        },{
+        id: "africa",
+        linkToObjectCustom: "africaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "asia",
+        linkToObjectCustom: "asiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        },{
+        id: "europe",
+        linkToObjectCustom: "europeDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "north_america",
+        linkToObjectCustom: "north_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+        }, {
+        id: "australia",
+        linkToObjectCustom: "australiaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+    }]
 };
-var australiaDataProvider = {
+australiaDataProvider = {
 map:"oceaniaLow",
-areas: [     {
+areas: [{
         id : "AU",
         title: "Australia",
         color: "#FFFFFF",
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1739,7 +1939,7 @@ areas: [     {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1749,7 +1949,7 @@ areas: [     {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1759,7 +1959,7 @@ areas: [     {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1769,7 +1969,7 @@ areas: [     {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1779,7 +1979,7 @@ areas: [     {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
         }, {
@@ -1789,67 +1989,109 @@ areas: [     {
         selectedColor: "#FF9F2A",
         rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        linkToObject: worldDataProvider,
+        linkToObjectCustom: "worldDataProvider",
         outlineColor: "#EFEFF4",
         showAsSelected: true
-        }]
-};
-
-/*==========  Continent  ==========*/
-
-var continentsDataProvider = {
-map: "continentsLow",
-areas: [{
+        },{
         id: "africa",
-        linkToObject: africaDataProvider,
-        color: "#304058",
+        linkToObjectCustom: "africaDataProvider",
+        color: "#FFFFFF",
         selectedColor: "#FF9F2A",
-        rollOverColor : "#304058",
+        rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        outlineColor: "#FFFFFF"
+        outlineColor: "#EFEFF4"
         }, {
         id: "asia",
-        linkToObject: asiaDataProvider,
-        color: "#304058",
+        linkToObjectCustom: "asiaDataProvider",
+        color: "#FFFFFF",
         selectedColor: "#FF9F2A",
-        rollOverColor : "#304058",
+        rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        outlineColor: "#FFFFFF"
-        }, {
-        id: "australia",
-        linkToObject: australiaDataProvider,
-        color: "#304058",
-        selectedColor: "#FF9F2A",
-        rollOverColor : "#304058",
-        passZoomValuesToTarget: true,
-        outlineColor: "#FFFFFF"
-        }, {
+        outlineColor: "#EFEFF4"
+        },{
         id: "europe",
-        linkToObject: europeDataProvider,
-        color: "#304058",
+        linkToObjectCustom: "europeDataProvider",
+        color: "#FFFFFF",
         selectedColor: "#FF9F2A",
-        rollOverColor : "#304058",
+        rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        outlineColor: "#FFFFFF"
+        outlineColor: "#EFEFF4"
         }, {
         id: "north_america",
-        linkToObject: north_americaDataProvider,
-        color: "#304058",
+        linkToObjectCustom: "north_americaDataProvider",
+        color: "#FFFFFF",
         selectedColor: "#FF9F2A",
-        rollOverColor : "#304058",
+        rollOverColor : "#FF9F2A",
         passZoomValuesToTarget: true,
-        outlineColor: "#FFFFFF"
+        outlineColor: "#EFEFF4"
         }, {
         id: "south_america",
-        linkToObject: south_americaDataProvider,
+        linkToObjectCustom: "south_americaDataProvider",
+        color: "#FFFFFF",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#FF9F2A",
+        passZoomValuesToTarget: true,
+        outlineColor: "#EFEFF4"
+    }]
+};
+
+/*==========  World Level==========*/
+
+continentsDataProvider = {
+    map: "continentsLow",
+    areas: [{
+        id: "africa",
+        linkToObjectCustom: "africaDataProvider",
         color: "#304058",
         selectedColor: "#FF9F2A",
         rollOverColor : "#304058",
         passZoomValuesToTarget: true,
         outlineColor: "#FFFFFF"
-        }
-        ]
+    }, {
+        id: "asia",
+        linkToObjectCustom: "asiaDataProvider",
+        color: "#304058",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#304058",
+        passZoomValuesToTarget: true,
+        outlineColor: "#FFFFFF"
+    }, {
+        id: "australia",
+        linkToObjectCustom: "australiaDataProvider",
+        color: "#304058",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#304058",
+        passZoomValuesToTarget: true,
+        outlineColor: "#FFFFFF"
+    }, {
+        id: "europe",
+        linkToObjectCustom: "europeDataProvider",
+        color: "#304058",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#304058",
+        passZoomValuesToTarget: true,
+        outlineColor: "#FFFFFF"
+    }, {
+        id: "north_america",
+        linkToObjectCustom: "north_americaDataProvider",
+        color: "#304058",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#304058",
+        passZoomValuesToTarget: true,
+        outlineColor: "#FFFFFF"
+    }, {
+        id: "south_america",
+        linkToObjectCustom: "south_americaDataProvider",
+        color: "#304058",
+        selectedColor: "#FF9F2A",
+        rollOverColor : "#304058",
+        passZoomValuesToTarget: true,
+        outlineColor: "#FFFFFF"
+    }
+    ]
 };
+
+
 /*=============================================
  =Class Defininf Main Function and Interactivity=
  =============================================*/
@@ -1888,6 +2130,20 @@ function homeButtonClicked(event){
 }
 
 function handleMapObjectClick(event) {
+    mapObject = event.mapObject;
+    if ( undefined != mapObject.linkToObjectCustom ) {
+        setTimeout(function () {
+            var zoomLevel = map.zoomLevel();
+            var zoomLongitude = map.zoomLongitude();
+            var zoomLatitude = map.zoomLatitude();
+            map.dataProvider = eval(mapObject.linkToObjectCustom);
+            map.dataProvider.zoomLevel = zoomLevel;
+            map.dataProvider.zoomLongitude = zoomLongitude;
+            map.dataProvider.zoomLatitude = zoomLatitude;
+            map.validateData();
+            return;
+        }, 1000);
+    }
     mapObject = event.mapObject;
     $("#sidebar-1").empty();
     loadMapViewReport();
@@ -1931,7 +2187,6 @@ map.addListener("zoomCompleted", function (event) {
                 previousMapObject = null;
                 }
                 })
-
 
 
 // monitor when home icon was clicked and also go to continents map
