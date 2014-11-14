@@ -46,9 +46,9 @@ This application uses the following methods to communicate with the HTML content
 
 [Learning about JSAPI Integration](http://developer.actuate.com/resources/documentation/ihubftype/integration/) 
 
-[Forums for discussing BIRT technologies are available at the following URL](http://developer.actuate.com/community/forum/) 
+[Forums for discussing BIRT technologies](http://developer.actuate.com/community/forum/) 
 
-[Additional information about integrating BIRT technology into applications is available at the following URL](http://developer.actuate.com/deployment-center/integrating-birt-into-applications/) 
+[Additional information about integrating BIRT technology into applications](http://developer.actuate.com/deployment-center/integrating-birt-into-applications/) 
 
 ## Credits
 This example uses the following third party libraries:
