@@ -1,14 +1,17 @@
 #BIRT Gazetteer
-==============
+
+---
 
 ##Overview
 This iOS Objective-C example illustrates how to integrate BIRT iHub resources into a native mobile application. Two BIRT APIs, the REST API, and the JavaScript API (JSAPI) retrieve data and visualizations from a demonstration BIRT iHub 3.1 server. The iHub server resources used by this example are included with the source code if you want to use your own BIRT iHub server.
+
+![](/Screenshots/examples.png)
 
 ## Quick Start
 1. Download the source code from this site.
 2. Open the file Gazetteer.xcodeproj in Xcode.
 3. Build and run the project in an iOS simulator or iOS device.
-4. Authenticate with username "demo" and password "demo."
+4. Authenticate with username "gazetteer" and password "Demo1234."
 5. Select a location from the list or map to view summary information.
 6. Select Details to view a specific report about that location.
 
@@ -37,11 +40,15 @@ This application uses the following methods to communicate with the HTML content
 * Call the init JavaScript function embedded in the webview and pass the values required to display the BIRT content. This call uses the UIWebView's stringByEvaluatingJavaScriptFromString function to call the JavaScript function.
 
 ## Documentation
-Additional information about integrating BIRT technology into applications is available at the following URL:
-http://developer.actuate.com/deployment-center/integrating-birt-into-applications/
+[Building Mobile Applications Using BIRT APIs](http://developer.actuate.com/be/documentation/ihub31-dev/RESTApp/index.html) 
 
-Forums for discussing BIRT technologies are available at the following URL:
-http://developer.actuate.com/community/forum/
+[Learning about REST API](http://developer.actuate.com/resources/documentation/ihub31/rest-api/) 
+
+[Learning about JSAPI Integration](http://developer.actuate.com/resources/documentation/ihubftype/integration/) 
+
+[Forums for discussing BIRT technologies are available at the following URL](http://developer.actuate.com/community/forum/) 
+
+[Additional information about integrating BIRT technology into applications is available at the following URL](http://developer.actuate.com/deployment-center/integrating-birt-into-applications/) 
 
 ## Credits
 This example uses the following third party libraries:
