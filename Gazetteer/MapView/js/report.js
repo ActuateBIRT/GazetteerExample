@@ -222,7 +222,12 @@ function loadViewer( data, report, id, bookmark)
             viewer.setWidth(window.innerWidth);
             viewer.setHeight(window.innerHeight);
         }
-        
+        viewer.registerEventHandler(actuate.viewer.impl.EventConstants.ON_SESSION_TIMEOUT,
+            function() {
+                window.location = "js-call:timeOut";
+            }
+        );
+
         viewer.setUIOptions( options );
         viewer.submit();
     }

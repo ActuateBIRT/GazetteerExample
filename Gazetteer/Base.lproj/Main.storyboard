@@ -288,6 +288,7 @@
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
+                <exit id="Tgk-Lb-fhP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2575" y="-784"/>
         </scene>
@@ -465,6 +466,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="dej-Rz-IUm" id="09G-Fn-2wF"/>
+                        <segue destination="Tgk-Lb-fhP" kind="unwind" identifier="goBack" unwindAction="unwindToView:" id="TrZ-Yg-9lr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tk7-tA-XV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -749,6 +751,7 @@ The code for this application is provided as an xCode project on GitHub(</string
                     <connections>
                         <outlet property="BarChartWebView" destination="L1w-FA-aEE" id="PGp-kc-k9V"/>
                         <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="Bie-Nh-zI2"/>
+                        <segue destination="Tgk-Lb-fhP" kind="unwind" identifier="goBack" unwindAction="unwindToView:" id="JkO-K1-gee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2U-nb-nUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,6 +814,7 @@ The code for this application is provided as an xCode project on GitHub(</string
                         <segue destination="Dsg-Hh-D32" kind="modal" identifier="information" id="3d9-k2-iFY"/>
                         <segue destination="xP8-8A-lSD" kind="modal" identifier="source" id="zEE-PX-UoB"/>
                         <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="TCw-9b-zzb"/>
+                        <segue destination="Tgk-Lb-fhP" kind="unwind" identifier="goBack" unwindAction="unwindToView:" id="Vlj-Iz-6a4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9K-rg-lKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1094,9 +1098,9 @@ CgoKCgoKA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="701-Jz-VX3"/>
-        <segue reference="KK0-3d-xbj"/>
-        <segue reference="MK1-xV-Ng3"/>
+        <segue reference="KRd-5e-emb"/>
+        <segue reference="8TY-xj-tyG"/>
+        <segue reference="eBe-CF-3j2"/>
         <segue reference="SvP-am-f7J"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.082352943720000002" green="0.1294117719" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>

@@ -303,4 +303,31 @@
     }
 }
 
+// This function is called on all location change :
+- (BOOL)webView:(UIWebView *)webView2 shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType {
+    
+    // Intercept custom location change, URL begins with "js-call:"
+    if ([[[request URL] absoluteString] hasPrefix:@"js-call:"]) {
+        
+        // Extract the selector name from the URL
+        NSArray *components = [[[request URL] absoluteString] componentsSeparatedByString:@":"];
+        NSString *function = [components objectAtIndex:1];
+        
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:NSSelectorFromString(function)];
+        #pragma clang diagnostic pop
+        
+        return NO;
+    }
+    
+    return YES;
+    
+}
+
+- (void)timeOut {
+    [self performSegueWithIdentifier:@"goBack" sender:self];
+}
+
 @end

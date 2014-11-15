@@ -49,6 +49,7 @@
     [self.view setBackgroundColor:[UIColor clearColor]];
     self.webView.scrollView.scrollEnabled = NO;
     self.webView.scrollView.bounces = NO;
+    [self canBecomeFirstResponder];
     [self loadHTML:@"index.html"];
     
 }
@@ -154,6 +155,7 @@
 
 -(void) viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    [self resignFirstResponder];
     if(self.actionSheet != nil) {
         [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
         self.actionSheet = nil;
@@ -309,6 +311,49 @@
     [self.view setUserInteractionEnabled:NO];
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:error delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
     [alert show];
+}
+
+// This function is called on all location change :
+- (BOOL)webView:(UIWebView *)webView2 shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType {
+    
+    // Intercept custom location change, URL begins with "js-call:"
+    if ([[[request URL] absoluteString] hasPrefix:@"js-call:"]) {
+        
+        // Extract the selector name from the URL
+        NSArray *components = [[[request URL] absoluteString] componentsSeparatedByString:@":"];
+        NSString *function = [components objectAtIndex:1];
+        
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:NSSelectorFromString(function)];
+        #pragma clang diagnostic pop
+        
+        return NO;
+    }
+    
+    return YES;
+    
+}
+
+- (void)timeOut {
+    
+    NSLog(@"I am being called");
+    [self performSegueWithIdentifier:@"goBack" sender:self];
+}
+
+-(BOOL) canBecomeFirstResponder {
+    return YES;
+}
+
+-(BOOL) resignFirstResponder {
+    return  YES;
+}
+
+-(void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        [self performSegueWithIdentifier:@"goBack" sender:self];
+    }
 }
 
 

@@ -1,6 +1,7 @@
 
 <script type='text/javascript' language='JavaScript' src='jsapiUrl'></script>
 <script>
+    
     var report ;
     var baseURL;
     var parameters;
@@ -38,8 +39,8 @@
         {
             var viewer = new actuate.Viewer( "container");
             viewer.setReportDesign( report );
-            viewer.setWidth(data.width);
-            viewer.setHeight(data.height);
+            viewer.setSize(data.width, data.height);
+            
             var options = new actuate.viewer.UIOptions( );
             options.enableToolBar(false);
             var parameterValues=[];
@@ -75,6 +76,11 @@
             }
             
             viewer.setUIOptions( options );
+            viewer.registerEventHandler(actuate.viewer.impl.EventConstants.ON_SESSION_TIMEOUT,
+                function() {
+                    window.location = "js-call:timeOut";
+                }
+            );
             viewer.submit();
         
         
