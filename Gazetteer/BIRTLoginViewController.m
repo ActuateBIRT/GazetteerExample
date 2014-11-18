@@ -67,18 +67,6 @@
     [self.indicatorView stopAnimating];
     self.username.delegate = self;
     
-    BOOL isLandscape = UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
-    //NSLog(@"isLandscape %d", isLandscape);
-    if (isLandscape) {
-        _appLogo.frame = CGRectMake(338,85,92,92);
-        _appTitle.frame = CGRectMake(189,185,390,50);
-        _username.frame = CGRectMake(189,245,390,50);
-        _password.frame = CGRectMake(189,305,390,50);
-        loginButton.frame = CGRectMake(189,365,390,50);
-        _loadingTitle.frame = CGRectMake(400,373,200,31);
-        _activitySpinner.frame = CGRectMake(445,380,20,20);
-        _popoverIcon.frame = CGRectMake(979,724,20,20);
-    }
     loginButton.titleLabel.font = [self.latoFont fontWithSize:25.0];
     self.username.font = [self.latoFont fontWithSize:20.0];
     self.password.font = [self.latoFont fontWithSize:20.0];
