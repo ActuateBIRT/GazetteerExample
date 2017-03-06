@@ -1,9 +1,9 @@
-#BIRT Gazetteer
+# BIRT Gazetteer
 
 ---
 
-##Overview
-This iOS Objective-C example illustrates how to integrate OpenText Information Hub (iHub) 16 resources into a native mobile application. Two OpenText iHub APIs, the REST API, and the JavaScript API (JSAPI) retrieve data and visualizations from a demonstration BIRT iHub 3.1 server. The iHub server resources used by this example are included with the source code if you want to use your own OpenText iHub server.
+## Overview
+This iOS Objective-C example illustrates how to integrate OpenText Information Hub (iHub) 16 resources into a native mobile application. Two OpenText iHub APIs, the REST API, and the JavaScript API (JSAPI) retrieve data and visualizations from a your iHub 16 server. The iHub server resources used by this example are included with the source code.
 
 ![](/Screenshots/examples.png)
 
@@ -26,16 +26,16 @@ This iOS Objective-C example illustrates how to integrate OpenText Information H
 ## Variables in source code
 The following NSStrings are contained in the BIRTConstants.m file:
 * REST_API_URL, you can change this value using the following URL format:
-    http://<iHub server name>:8000/api/v2/
+    http://[iHub server name]:8000/api/v2/
 * IHUB_SERVER_URL, you can change this value using the following URL format:
-    http://<iHub server name>:8700/
+    http://[iHub server name]:8700/
 * REPORT_FOLDER, the file path where BIRT reports are located:
     /Home/administrator
 * DATA_OBJECT_FOLDER, the file path where BIRT data objects are located:
     /Resources/Data Objects
-    
+
 ## Resources in iHub 16 server
-If you are using your own iHub server, install the world.data file in the 
+Install the world.data file in the
 \Resources\Data Objects folder of the iHub volume.
 
 Report designs for the application are stored in the administrator’s home folder in the volume. Install the following files into the \Home\administrator folder of the iHub volume:
@@ -56,7 +56,7 @@ The OpenText iHub server offers many RESTful URI endpoints to access stored reso
 * Download a list of locations values that are used to build BIRT reports
 * Download data sets in JSON format for display in third-party visualizations
 
-A RESTful URI request to a resource is built using the NSString class. Objective-C sends the NSString to the iHub server using NSURLConnection. 
+A RESTful URI request to a resource is built using the NSString class. Objective-C sends the NSString to the iHub server using NSURLConnection.
 
 An NSDictionary object is created from the iHub server's JSON formatted response using the NSJSONSerialization class. The Objective-C code uses these NSDictionary values to request additional resources, display available location names in a table, and to display data about a location in a text string or an embedded visualization such as a chart.
 
@@ -70,15 +70,15 @@ This application uses the following methods to communicate with the HTML content
 * Call the init JavaScript function embedded in the webview and pass the values required to display the BIRT content. This call uses the UIWebView's stringByEvaluatingJavaScriptFromString function to call the JavaScript function.
 
 ## Documentation
-[Reporting and Information Hub APIs Programmer Guide](https://knowledge.opentext.com/knowledge/llisapi.dll/Open/62388776) 
+[Reporting and Information Hub APIs Programmer Guide](https://knowledge.opentext.com/knowledge/llisapi.dll/Open/62388776)
 
 See the following chapters:
-Using iHub APIs for mobile applications
-Understanding the Gazetteer mobile application
+* Using iHub APIs for mobile applications
+* Understanding the Gazetteer mobile application
 
-[Forums for discussing BIRT technologies](http://developer.actuate.com/community/forum/) 
+[Forums for discussing BIRT technologies](http://developer.actuate.com/community/forum/)
 
-[Additional information about integrating BIRT technology into applications](http://developer.actuate.com/deployment-center/integrating-birt-into-applications/) 
+[Additional information about integrating BIRT technology into applications](http://developer.actuate.com/deployment-center/integrating-birt-into-applications/)
 
 ## Credits
 This example uses the following third party libraries:
