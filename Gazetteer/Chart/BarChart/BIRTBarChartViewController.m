@@ -143,11 +143,18 @@
 
 -(NSArray *) getBookMarks : (NSString *) fileName {
     
-    NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"files?search=%@&authId=%@"],[fileName stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding], self.chartData.authId];
+    //NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"files?search=%@&authId=%@"],[fileName stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding], self.chartData.authId];
+    NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"files/search?name=%@"],[fileName stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding]];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getUrl]
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                            timeoutInterval:60];
+    [urlRequest setHTTPMethod:@"GET"];
+    [urlRequest setValue:self.chartData.authId forHTTPHeaderField:@"authToken"];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    [urlRequest setValue:@"gazetteer/0.0.1" forHTTPHeaderField:@"User-Agent"];
     
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
     NSError *error;
-    NSError *urlConnectionError;
+    NSError *urlConnectionError;	
     NSURLResponse *urlResponse;
     NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:&urlConnectionError];
 
@@ -168,7 +175,7 @@
         return nil;
     }
     
-    NSArray * responseArr = response[@"ItemList"][@"File"];
+    NSArray * responseArr = response[@"itemList"][@"file"];
     
     if (responseArr == nil) {
         self.logout = FALSE;
@@ -178,11 +185,20 @@
     
     NSDictionary * dict = [responseArr objectAtIndex:0];
     
-    NSString *fileId = [dict valueForKey:@"Id"];
+    NSString *fileId = [dict valueForKey:@"id"];
+    NSLog(@"FILE ID: %@",fileId);
     
-    getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"visuals/%@/bookmarks?authId=%@"],fileId, self.chartData.authId];
+    //getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"visuals/%@/bookmarks?authId=%@"],fileId, self.chartData.authId];
+    getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"visuals/%@/bookmarks"],fileId];
     
-    urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
+    urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getUrl]
+                                         cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                     timeoutInterval:60];
+    [urlRequest setHTTPMethod:@"GET"];
+    [urlRequest setValue:self.chartData.authId forHTTPHeaderField:@"authToken"];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    [urlRequest setValue:@"gazetteer/0.0.1" forHTTPHeaderField:@"User-Agent"];
+    
     
     data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:&urlConnectionError];
     
@@ -203,7 +219,8 @@
         return nil;
     }
 
-    return response[@"BookmarkList"][@"BookMark"];
+    //return response[@"BookmarkList"][@"BookMark"];
+    return response[@"BookMarks"];
 }
 
 - (void)didReceiveMemoryWarning

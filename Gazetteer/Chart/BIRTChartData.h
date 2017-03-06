@@ -10,7 +10,7 @@
 
 @interface BIRTChartData : NSObject
 
-@property (strong, nonatomic) NSString* authId;
+@property (strong, nonatomic) NSString *authId;
 @property (strong, nonatomic) NSArray *worldData;
 @property (strong, nonatomic) NSString *country;
 @property (strong, nonatomic) NSString *continent;

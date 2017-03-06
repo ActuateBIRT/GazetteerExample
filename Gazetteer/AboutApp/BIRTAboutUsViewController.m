@@ -31,7 +31,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:22/255.0f green:32/255.0f blue:48/255.0f alpha:1.0f];
     // Do any additional setup after loading the view.
-    BOOL isLandscape = UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
+    BOOL isLandscape = UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
     //NSLog(@"isLandscape %d", isLandscape);
     if (isLandscape) {
         _portraitGlobe.hidden = YES;

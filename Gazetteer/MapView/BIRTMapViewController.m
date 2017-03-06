@@ -100,7 +100,7 @@
     self.detailsBtn =[[UIButton alloc] init];
     [self.detailsBtn addTarget:self action:@selector(showReport:) forControlEvents:UIControlEventTouchUpInside];
     
-    BOOL islandscape =  UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
+    BOOL islandscape =  UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
     if (islandscape) {
         self.detailsBtn.frame = CGRectMake(840, 550, 150, 125);
         _isShowingLandscape = YES;

@@ -182,7 +182,7 @@
         pagerView.delegate = self;
         scrollView.delegate = self;
         
-        BOOL isLandscape = UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
+        BOOL isLandscape = UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
         //NSLog(@"isLandscape %d", isLandscape);
         _titleLabel.font = [UIFont fontWithName:@"Lato-Bold" size:40.0];
         

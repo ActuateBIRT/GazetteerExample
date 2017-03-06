@@ -152,12 +152,12 @@ function initReportView(inputData) {
     } else {
         
         var reqOps = new actuate.RequestOptions( );
-        reqOps.setVolumeProfile( "default volume" );
-        reqOps.setVolume( "default volume" );
+        //reqOps.setVolumeProfile( "default volume" );
+        //reqOps.setVolume( "default volume" );
         actuate.load("viewer");
         actuate.initialize(
                            baseUrl,
-                           reqOps,
+                           //reqOps,
                            userName,
                            password,
                            function()

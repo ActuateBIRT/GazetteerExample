@@ -121,6 +121,7 @@
         int i=0;
         if (self.worldGDPData == nil) {
             self.worldGDPData = [self getGDPData:@"world data"];
+            //NSLog(@"World GDP data: %@",self.worldGDPData);
         }
         
         if (!self.chartData.isWorld) {
@@ -306,10 +307,18 @@
 - (NSDictionary *) getGDPData : (NSString *) endPoint{
     
     NSDictionary* response;
-    NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"dataobject/%@/%@?authId=%@"],self.chartData.dataObjectId,
-             [endPoint stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding], self.chartData.authId];
+    //NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"dataobjects/%@/%@?authId=%@"],self.chartData.dataObjectId,
+    NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"dataobjects/%@/%@"],self.chartData.dataObjectId,
+             [endPoint stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding]];
     
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getUrl]
+                                                       cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                   timeoutInterval:60];
+    [urlRequest setHTTPMethod:@"GET"];
+    [urlRequest setValue:self.chartData.authId forHTTPHeaderField:@"authToken"];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    [urlRequest setValue:@"gazetteer/0.0.1" forHTTPHeaderField:@"User-Agent"];
+    
     NSError *urlConnectionError;
     NSURLResponse *urlResponse;
     NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:&urlConnectionError];
@@ -325,13 +334,14 @@
     
     NSError *error;
     
+    //response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
     response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
     if (error != nil) {
         self.logout = FALSE;
         [self showAlert:[error localizedDescription]];
         @throw [NSException exceptionWithName:@"ERROR" reason:[error localizedDescription] userInfo:nil];
     }
-    
+    //NSLog(@"data: %@",response[@"data"]);
     return response[@"data"];	
 }
 

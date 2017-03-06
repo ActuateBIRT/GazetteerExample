@@ -44,16 +44,27 @@
     NSString *fileId;
     @try {
         
-        NSString *fileName = [NSString stringWithFormat:@"%@%@",DATA_OBJECT_FOLDER, @"world.Data"];
-        NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"files?search=%@&authId=%@"],[fileName stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding], self.authId];
+        NSString *fileName = [NSString stringWithFormat:@"%@%@",DATA_OBJECT_FOLDER, @"world.data"];
+        //NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"files?search=%@&authId=%@"],[fileName stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding], self.authId];
+        NSString *getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"files/search?name=%@"],[fileName stringByAddingPercentEscapesUsingEncoding :NSUTF8StringEncoding]];
         
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
+        //NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getUrl]
+                                                                  cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                              timeoutInterval:60];
+        [urlRequest setHTTPMethod:@"GET"];
+        [urlRequest setValue:self.authId forHTTPHeaderField:@"authToken"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"accept"];
+        [urlRequest setValue:@"gazetteer/0.0.1" forHTTPHeaderField:@"User-Agent"];
+        
+        
         NSError *urlConnectionError;
         NSURLResponse *urlResponse;
         NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:&urlConnectionError];
         
         if (urlConnectionError != nil) {
             [self showAlert:[urlConnectionError localizedDescription]];
+            NSLog(@"error: %@", urlConnectionError);
             return;
         }
         NSError *error;
@@ -64,7 +75,7 @@
             return;
         }
         
-        NSArray * responseArr = response[@"ItemList"][@"File"];
+        NSArray * responseArr = response[@"itemList"][@"file"];
         if (responseArr == nil || [responseArr count] == 0) {
             [self showAlert:@"Unable to get the file"];
             
@@ -72,11 +83,18 @@
             
             NSDictionary * dict = [responseArr objectAtIndex:0];
             
-            fileId = [dict valueForKey:@"Id"];
+            fileId = [dict valueForKey:@"id"];
             
-            getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"dataobject/%@/Combined?authId=%@"],fileId, self.authId];
+            getUrl =[NSString stringWithFormat:[NSString stringWithFormat:@"%@%@",REST_API_URL, @"dataobjects/%@/Combined"],fileId];
             
-            urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
+            //urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:getUrl]];
+            urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getUrl]
+                                                 cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                             timeoutInterval:60];
+            [urlRequest setHTTPMethod:@"GET"];
+            [urlRequest setValue:self.authId forHTTPHeaderField:@"authToken"];
+            [urlRequest setValue:@"application/json" forHTTPHeaderField:@"accept"];
+            [urlRequest setValue:@"gazetteer/0.0.1" forHTTPHeaderField:@"User-Agent"];
             
             data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:&urlConnectionError];
             

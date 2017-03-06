@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ons-Df-6Ry">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1909" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="ons-Df-6Ry">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -138,7 +138,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="23" clearButtonMode="whileEditing" id="y8O-Du-eWG">
                                 <rect key="frame" x="189" y="427" width="390" height="50"/>
@@ -146,7 +146,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="dVr-Ro-NG5">
                                 <rect key="frame" x="189" y="487" width="390" height="50"/>
@@ -213,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dr2-Cb-NNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3763" y="-912"/>
+            <point key="canvasLocation" x="-3755" y="-776"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="FZR-FJ-kYT">
@@ -227,13 +227,13 @@
                                 <rect key="frame" x="167" y="33" width="313" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iHub Server URL" minimumFontSize="17" id="xb0-0w-hs6">
                                 <rect key="frame" x="167" y="85" width="313" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lIs-Uz-deP">
                                 <rect key="frame" x="238" y="129" width="30" height="30"/>
@@ -272,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66L-wQ-WBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="477"/>
+            <point key="canvasLocation" x="-3825" y="468.5"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -290,7 +290,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
                 <exit id="Tgk-Lb-fhP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2575" y="-784"/>
+            <point key="canvasLocation" x="-2391" y="-776"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="smW-Zh-WAh">
@@ -338,7 +338,7 @@
                     <connections>
                         <outlet property="tableView" destination="r7i-6Z-zg0" id="4rn-Ur-ofo"/>
                         <segue destination="ons-Df-6Ry" kind="modal" identifier="logout" id="H8E-ZF-nHQ"/>
-                        <segue destination="Fll-0b-Hsm" kind="modal" identifier="mapView" modalTransitionStyle="flipHorizontal" animates="NO" id="nfp-Tk-EsH"/>
+                        <segue destination="Fll-0b-Hsm" kind="modal" identifier="mapView" animates="NO" modalTransitionStyle="flipHorizontal" id="nfp-Tk-EsH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -501,15 +501,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">This is a simple example application that illustrates how developers can craft sophisticated mobile applications that integrate the power of BIRT and BIRT iHub from Actuate. 
+                                        <string key="content">This example application illustrates how developers can craft sophisticated mobile applications that integrate the power of embedded analytics from OpenText iHub (</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="http://www.opentext.com/what-we-do/products/analytics">
+                                        <attributes>
+                                            <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <string key="NSLink">http://www.opentext.com/what-we-do/products/analytics</string>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">). 
 
-BIRT transforms complex data seamlessly and effectively into compelling visualizations: reports, statements, graphs, charts, tables, diagrams, and more. With BIRT iHub developers can quickly add embedded analytics and business intelligence capabilities to applications using REST and JavaScript APIs.
+BIRT transforms complex data seamlessly and effectively into compelling visualizations: reports, statements, graphs, charts, tables, diagrams, and more. With OpenText iHub developers can quickly add embedded analytics and business intelligence capabilities to applications using REST and JavaScript APIs.
 
-The BIRT iHub REST API provides easy access to all the functionality of the BIRT iHub platform including creating, securing and accessing content. The JSAPI allows developers to directly and seamlessly display visualizations from the BIRT iHub platform within their mobile applications.
+The OpenText iHub REST API provides easy access to all the functionality of the OpenText iHub platform including creating, securing and accessing content. The JSAPI allows developers to directly and seamlessly display visualizations from the OpenText iHub platform within their mobile applications.
 
 BIRT enables developers to incorporate rich analytics and business intelligence features without all the coding that would otherwise be necessary to build those visualizations in the mobile app itself.
 
-The code for this application is provided as an xCode project on GitHub(</string>
+The code for this application is provided as an Xcode project on GitHub(</string>
                                         <attributes>
                                             <color key="NSColor" red="0.019607843137254902" green="0.070588235294117646" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="13" name="Helvetica"/>
@@ -608,7 +624,7 @@ The code for this application is provided as an xCode project on GitHub(</string
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNI-Ya-tkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1258" y="664"/>
+            <point key="canvasLocation" x="-1582.5" y="320"/>
         </scene>
         <!--Column Chart View Controller-->
         <scene sceneID="Zd9-hL-iEa">
@@ -1092,16 +1108,11 @@ CgoKCgoKA
         <image name="map_landscape.png" width="2048" height="1403"/>
         <image name="menu.png" width="21" height="17"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KRd-5e-emb"/>
+        <segue reference="kHj-mT-ZYl"/>
         <segue reference="8TY-xj-tyG"/>
         <segue reference="eBe-CF-3j2"/>
-        <segue reference="SvP-am-f7J"/>
+        <segue reference="h1P-ug-53A"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.082352943720000002" green="0.1294117719" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
 </document>

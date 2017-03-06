@@ -11,10 +11,10 @@
 @implementation BIRTConstants
 
 
-NSString* REST_API_URL = @"http://gazetteerexample.actuate.com:5000/ihub/v1/";
-NSString* IHUB_SERVER_URL = @"http://gazetteerexample.actuate.com:8700/";
+NSString* REST_API_URL = @"http://10.0.0.2:8000/api/v2/";
+NSString* IHUB_SERVER_URL = @"http://10.0.0.2:8700/";
 
-NSString* const REPORT_FOLDER = @"/Home/Gazetteer/";;
+NSString* const REPORT_FOLDER = @"/Home/Administrator/";
 NSString* const DATA_OBJECT_FOLDER = @"/Resources/Data Objects/";
 
 @end

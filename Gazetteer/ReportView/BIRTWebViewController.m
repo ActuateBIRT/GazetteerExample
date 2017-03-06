@@ -88,7 +88,7 @@
     //NSLog(@"URL is loading %d", UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]));
     NSString *fileName ;
     
-    BOOL islandscape =  UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
+    BOOL islandscape =  UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]);
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithDictionary:self.userData];
     [data removeObjectForKey:@"Childs"];
     NSString *name = [self.userData valueForKey:@"name"];

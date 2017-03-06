@@ -194,6 +194,7 @@
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"gazetteer/0.0.1" forHTTPHeaderField:@"User-Agent"];
     [request setHTTPBody:postData];
     
     NSError *error;
@@ -206,7 +207,8 @@
         [alert show];
     } else {
         NSDictionary *loginResponse = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableLeaves error:nil];
-        _authId = [loginResponse objectForKey:@"AuthId"];
+        _authId = [loginResponse objectForKey:@"authToken"];
+        NSLog(@"The authToken for the REST API is %@", _authId);
         NSDictionary *errorResp = (NSDictionary *)[loginResponse objectForKey:@"error"];
         //NSLog(@"errorResp -- %lu", (unsigned long)errorResp.count);
         
