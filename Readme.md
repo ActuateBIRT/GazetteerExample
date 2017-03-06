@@ -26,13 +26,13 @@ This iOS Objective-C example illustrates how to integrate OpenText Information H
 ## Variables in source code
 The following NSStrings are contained in the BIRTConstants.m file:
 * REST_API_URL, you can change this value using the following URL format:
-    http://[iHub server name]:8000/api/v2/
+    - http://[iHub server name]:8000/api/v2/
 * IHUB_SERVER_URL, you can change this value using the following URL format:
-    http://[iHub server name]:8700/
+    - http://[iHub server name]:8700/
 * REPORT_FOLDER, the file path where BIRT reports are located:
-    /Home/administrator
+    - /Home/administrator
 * DATA_OBJECT_FOLDER, the file path where BIRT data objects are located:
-    /Resources/Data Objects
+    - /Resources/Data Objects
 
 ## Resources in iHub 16 server
 Install the world.data file in the
